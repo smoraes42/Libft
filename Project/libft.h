@@ -6,7 +6,7 @@
 /*   By: smoraes- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 04:55:07 by smoraes-          #+#    #+#             */
-/*   Updated: 2024/01/27 15:12:15 by smoraes-         ###   ########.fr       */
+/*   Updated: 2024/01/30 23:55:08 by smoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
+
+typedef	struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *s);

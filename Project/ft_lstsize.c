@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mainstriteri.c                                     :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smoraes- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 16:58:18 by smoraes-          #+#    #+#             */
-/*   Updated: 2024/01/31 11:23:05 by smoraes-         ###   ########.fr       */
+/*   Created: 2024/02/05 04:07:33 by smoraes-          #+#    #+#             */
+/*   Updated: 2024/02/05 04:15:13 by smoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Project/libft.h"
+#include "libft.h"
 
-void ft_putchar(unsigned int fd, char *s)
+int	ft_lstsize(t_list *lst)
 {
-	write(fd, s, 1);
+	int	count;
+	t_list *ptr;
+	ptr = NULL;
+	if (lst == NULL)
+		return(NULL);
+	ptr = lst;
+	count = 0;
+	while (ptr != NULL)
+	{
+		count++;
+		ptr = ptr->next;
+	}
+	return(count);
 }
-
-
-int main(int argc ,char **argv)
-{
-	(void) argc;
-	(void) argv;
-	char v[] = "123456";
-	ft_striteri(v, ft_putchar); 
-	return (0);
-

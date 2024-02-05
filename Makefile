@@ -6,7 +6,7 @@
 #    By: smoraes- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/14 05:19:01 by smoraes-          #+#    #+#              #
-#    Updated: 2024/01/28 16:33:50 by smoraes-         ###   ########.fr        #
+#    Updated: 2024/01/31 09:40:18 by smoraes-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,8 +44,8 @@ all: $(NAME)
 
 $(NAME):$(OBJS)
 	$(ARS) $(NAME) $(OBJS)
-
-%.o:%.c libft.h Makefile
+ 
+%.o:%.c  Makefile
 	cc $(CFLAGS) -c $< -o $@
 
 # build a main
