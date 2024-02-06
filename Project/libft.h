@@ -6,7 +6,7 @@
 /*   By: smoraes- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 04:55:07 by smoraes-          #+#    #+#             */
-/*   Updated: 2024/01/30 23:55:08 by smoraes-         ###   ########.fr       */
+/*   Updated: 2024/02/06 20:23:01 by smoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,11 @@ int		ft_tolower(int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_memcmp(const void *str1, const void *str2, size_t n);
 int		ft_atoi(const char *str);
+
+// Extra mine
+void	ft_put_ulong_fd(unsigned long n, int fd);
+void	ft_put_uint_fd(unsigned int n, int fd);
+void	ft_puthex_frmt_fd(unsigned long n, int fd);
+void	ft_puthex_frmt_mayus_fd(unsigned long n, int fd)
 
 #endif

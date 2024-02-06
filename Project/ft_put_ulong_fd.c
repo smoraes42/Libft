@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_put_ulong_fd.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smoraes- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 10:09:08 by smoraes-          #+#    #+#             */
-/*   Updated: 2024/02/06 01:49:04 by smoraes-         ###   ########.fr       */
+/*   Created: 2024/02/06 16:41:37 by smoraes-          #+#    #+#             */
+/*   Updated: 2024/02/06 17:40:42 by smoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_put_ulong_fd(unsigned long n, int fd)
 {
-	int		ind;
-	char	c;
-
-	ind = 0;
-	while (s[ind] != '\0')
+	if (n > 9)
 	{
-		c = s[ind];
-		write(fd, &c, 1);
-		ind++;
+		ft_put_ulong_fd((n / 10),fd);
 	}
+	ft_putchar_fd(((n % 10) + '0'), fd);
 }

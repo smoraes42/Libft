@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_puthex_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smoraes- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 10:09:08 by smoraes-          #+#    #+#             */
-/*   Updated: 2024/02/06 01:49:04 by smoraes-         ###   ########.fr       */
+/*   Created: 2024/02/06 17:56:46 by smoraes-          #+#    #+#             */
+/*   Updated: 2024/02/06 20:26:07 by smoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
-{
-	int		ind;
-	char	c;
+/*
+	[0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F]
+	40732766361216
+	0x7ffee68c1680
+*/
 
-	ind = 0;
-	while (s[ind] != '\0')
+void ft_puthex_fd(unsigned long n, int fd)
+{
+	char hextab[18] = "0123456789abcdefx";
+
+	if (n > 9)
 	{
-		c = s[ind];
-		write(fd, &c, 1);
-		ind++;
+		ft_puthex_fd((n / 16),fd);
 	}
+	ft_putchar_fd((hextab[n % 16]), fd);
 }
