@@ -29,7 +29,9 @@ SRC	= ft_isalnum.c		ft_isalpha.c	ft_isascii.c	ft_strtrim.c\
 	  ft_atoi.c 		ft_putchar_fd.c ft_putstr_fd.c\
 	  ft_putendl_fd.c	ft_putnbr_fd.c	ft_itoa.c\
 	  ft_striteri.c\
-	  ft_put_uint_fd.c ft_put_ulong_fd.c ft_puthex_fd.c\
+	  ft_put_uint_fd.c ft_put_ulong_fd.c ft_puthex_frmt_fd.c\
+	  ft_puthex_frmt_mayus_fd.c ft_puthex_frmt_mayus_fd.c\
+	  ft_puthex_fd.c ft_puthex_mayus_fd.c
 
 MSRC	= main.c
 OBJS	= $(SRC:.c=.o)
