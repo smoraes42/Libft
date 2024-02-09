@@ -6,7 +6,7 @@
 /*   By: smoraes- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 12:46:29 by smoraes-          #+#    #+#             */
-/*   Updated: 2024/02/04 22:38:09 by smoraes-         ###   ########.fr       */
+/*   Updated: 2024/02/09 22:07:00 by smoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ char	**ft_split(const char *s, char c)
 
 	ft_initiate_vars(&i, &j, &subs_ind);
 	strs_ar = (char **) ft_calloc((ft_wcount(s, c) + 1), sizeof(char *));
-	if (!strs_ar)
+	if (!strs_ar || !s)
 		return (NULL);
 	while (i <= ft_strlen(s))
 	{

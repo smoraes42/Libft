@@ -6,12 +6,11 @@
 /*   By: smoraes- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 10:14:57 by smoraes-          #+#    #+#             */
-/*   Updated: 2024/01/26 00:02:47 by smoraes-         ###   ########.fr       */
+/*   Updated: 2024/02/09 22:22:07 by smoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
@@ -37,5 +36,11 @@ int	ft_atoi(const char *str)
 		conv *= 10;
 		conv += (str[i++] - '0');
 	}
-	return (conv * pos);
+	if ( conv > INT_MAX )
+	{
+		conv = -1;
+		return (conv);
+	}
+	else
+		return (conv * pos);
 }

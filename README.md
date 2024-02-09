@@ -46,3 +46,8 @@ _As they may be bug or error prone, do not use them on real projects, or do your
 
 ## Bonus 
 # Libft
+
+
+## TODO
+- [ ] Check all with NULLS
+- [ ] Check -1 behaviour in ft_atoi.c
