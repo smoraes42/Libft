@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthex_mayus_fd.c                               :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smoraes- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 17:56:46 by smoraes-          #+#    #+#             */
-/*   Updated: 2024/02/07 06:04:51 by smoraes-         ###   ########.fr       */
+/*   Created: 2024/02/05 04:07:01 by smoraes-          #+#    #+#             */
+/*   Updated: 2024/02/10 00:31:37 by smoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-	[0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F]
-	40732766361216
-	0x7ffee68c1680
-*/
-
-void ft_puthex_mayus_fd(unsigned long n, int fd)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	char hextab[18] = "0123456789ABCDEFx";
+	new->next = *lst;
+	*lst = new;
+}
 
-	if (n > 9)
-	{
-		ft_puthex_mayus_fd((n / 16),fd);
-	}
-	ft_putchar_fd((hextab[n % 16]), fd);
+int main(void)
+{
+	int x = 45;
+	t_list *stru = ft_lstnew(&x);
+
+	printf("%d\n", *(int *)stru->content);
+	printf("%d\n", (int)stru->content);
+	printf("%p\n", stru->content);
+	printf("%p\n", stru.content);
+
+	return (0);
 }
