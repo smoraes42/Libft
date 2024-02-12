@@ -1,40 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smoraes- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/16 10:14:57 by smoraes-          #+#    #+#             */
-/*   Updated: 2024/02/12 06:12:34 by smoraes-         ###   ########.fr       */
+/*   Created: 2024/02/12 05:33:27 by smoraes-          #+#    #+#             */
+/*   Updated: 2024/02/12 06:52:57 by smoraes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	int	i;
-	int	pos;
-	int	conv;
+	t_list	*ptr;
+	t_list	*tmp;
 
-	i = 0;
-	pos = 1;
-	conv = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	if (lst == NULL || del == NULL || *lst == NULL)
+		return ;
+	ptr = *lst;
+	while (ptr)
 	{
-		if (!(str[i + 1] >= '0' && str[i + 1] <= '9'))
-			return (0);
-		if (str[i] == '-')
-			pos *= (-1);
-		i++;
+		tmp = ptr;
+		ptr = ptr->next;
+		ft_lstdelone(tmp, del);
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		conv *= 10;
-		conv += (str[i++] - '0');
-	}
-	return (conv * pos);
+	*lst = NULL;
 }
+
+/* 
+void ft_lstfree(void *nodep)
+{
+    t_list *node = nodep;
+    free(node->data);
+    free(node);
+}
+
+int main(void)
+{
+    t_list *list = NULL;
+    ft_lstclear(&list,ft_lstfree);
+    return 0;
+}
+*/
