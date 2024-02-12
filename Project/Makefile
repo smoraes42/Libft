@@ -14,13 +14,13 @@
 # Vars
 CC			= cc -g
 RM			= rm -rf
-ARS			= ar crs
+ARS			= ar -rcs
 HEAD		= libft.h
 NAME		= libft.a
 CFLAGS		= -Wall -Werror -Wextra
 #HEAD_BONUS	= libft_bonus.h
 #MAKEFLAGS += --silent
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean re bonus
 
 
 
@@ -40,7 +40,7 @@ OBJS 		= $(SRC:.c=.o)
 
 # Bonus Part
 BONUS_SRC 	=\
-	ft_lstnew_bonus.c\
+	ft_lstnew_bonus.c ft_lstadd_back_bonus.c ft_lstlast_bonus.c\
 
 BONUS_OBJS 	= $(BONUS_SRC:.c=.o) 
 
